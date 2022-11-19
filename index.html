@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polynomial Solver</title>
+  <style>
+    :root {
+      --btn-w: 50px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    .main {
+      width: 100%;
+      height: 100%;
+    }
+
+    .header {
+      width: 100%;
+      text-align: center;
+      padding: 5px 0;
+      border-bottom: .4vw solid #111;
+    }
+
+    .header h1 {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    label {
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding-top: 10px;
+      height: fit-content;
+    }
+
+    .eq-container input {
+      border: 1px solid #000;
+      border-radius: 50rem;
+      --w: 300px;
+      width: var(--w);
+      height: calc(var(--w)/7);
+      outline: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 10px;
+    }
+
+    .eq-container {
+      padding: 10px;
+      display: flex;
+    }
+
+    .btn-container {
+      padding-top: 5px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* button:not(:last-child){
+      margin-right: 15px;
+    } */
+
+    button {
+      font-size: 1.3rem;
+      font-weight: bold;
+      width: var(--btn-w);
+      height: var(--btn-w);
+      border-radius: 5px;
+      transition: 200ms ease-in-out;
+    }
+
+    .main button:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .num-div,
+    .helper-btn-div {
+      display: grid;
+      grid-template-columns: var(--btn-w) var(--btn-w) var(--btn-w);
+      grid-row-gap: 15px;
+      grid-column-gap: 15px;
+      border: 1px solid #111;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .helper-btn-div {
+      grid-template-columns: var(--btn-w) var(--btn-w) var(--btn-w) var(--btn-w);
+      margin-bottom: 15px;
+    }
+
+    .clr-btn {
+      grid-row-start: 1;
+      grid-row-end: 4;
+      grid-column-start: 4;
+      height: auto;
+      background-color: rgba(248, 0, 0, 0.7);
+
+    }
+
+    .calc-btn {
+      width: auto;
+      padding: 0 10px;
+      background: rgba(255, 170, 0, 0.7);
+      border-radius: 1.5rem;
+      margin-left: 10px;
+    }
+
+    
+
+    .helper-btn-div button{
+      background: rgba(0, 255, 183, 0.7);
+    }
+
+    .res{
+      text-align: center;
+      padding-top: 10px;
+      color: #00c92b;
+      font-size: calc(2vw+2em);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <h1>POLYNOMIAL SOLVER</h1>
+    </div>
+    <div class="content">
+      <div class="eq-container">
+        <label for="equation">Second degree equation : </label>
+        <div><input type="text" id="equation" readonly title="Click to clear">
+          <div class="btn-container">
+            <div class="helper-btn-div">
+              <button class="helper-btns" onclick="clicked('x*x')">&#119909<sup>2</sup></button>
+              <button class="helper-btns" onclick="clicked('x')">&#119909</button>
+              <button class="helper-btns" onclick="clicked('+')">+</button>
+              <button class="helper-btns" onclick="clicked('-')">-</button>
+            </div>
+            <div class="num-div">
+              <button class="num-keys" onclick="clicked('1')">1</button>
+              <button class="num-keys" onclick="clicked('2')">2</button>
+              <button class="num-keys" onclick="clicked('3')">3</button>
+              <button class="num-keys" onclick="clicked('4')">4</button>
+              <button class="num-keys" onclick="clicked('5')">5</button>
+              <button class="num-keys" onclick="clicked('6')">6</button>
+              <button class="num-keys" onclick="clicked('7')">7</button>
+              <button class="num-keys" onclick="clicked('8')">8</button>
+              <button class="num-keys" onclick="clicked('9')">9</button>
+
+              <button class="num-keys clr-btn" onclick="clr()" on>C</button>
+            </div>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calc()">Calculate</button>
+      </div>
+      <div class="res-div">
+        <h1 class="res"></h1>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
