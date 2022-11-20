@@ -8,17 +8,18 @@ function clicked(text) {
   input.value+=text
 }
 
-function clr() {
+function bkspc() {
   input.value=input.value.slice(0,-1)
 }
 
-input.onclick = () => {
-  if (confirm("Clearing all content!")) { input.value = "" }
+  
+function clr(){
+  input.value = "" 
 }
 
 function calc() {
   results = solve(findTerms(input.value))
-  document.querySelector(".res").innerHTML = `&#119909 = { ${results[0]} , ${results[1]} }`;
+  document.querySelector("#result").value = `x = { ${results[0]} , ${results[1]} }`;
   
 }
 

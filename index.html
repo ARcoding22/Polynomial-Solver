@@ -27,6 +27,11 @@
       height: 100%;
     }
 
+    h2{
+      
+    padding-bottom: 20px;
+    }
+
     .header {
       width: 100%;
       text-align: center;
@@ -45,21 +50,22 @@
       height: fit-content;
     }
 
-    .eq-container input {
-      border: 1px solid #000;
-      border-radius: 50rem;
-      --w: 300px;
-      width: var(--w);
-      height: calc(var(--w)/7);
+    .main input {
+      border: 3px solid #000;
+      border-radius: 10px;
+      width: 110%;
+      margin-bottom: 10px;
       outline: none;
       font-size: 1.1rem;
       font-weight: 600;
-      padding: 10px;
+      padding: 13px 10px;
     }
 
-    .eq-container {
+    .main {
       padding: 10px;
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .btn-container {
@@ -98,26 +104,35 @@
       padding: 10px;
     }
 
+    
+
     .helper-btn-div {
       grid-template-columns: var(--btn-w) var(--btn-w) var(--btn-w) var(--btn-w);
       margin-bottom: 15px;
     }
 
     .clr-btn {
-      grid-row-start: 1;
-      grid-row-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 5;
       grid-column-start: 4;
       height: auto;
       background-color: rgba(248, 0, 0, 0.7);
 
     }
 
-    .calc-btn {
-      width: auto;
-      padding: 0 10px;
+    .num-keys.backspace{
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column: 4;
       background: rgba(255, 170, 0, 0.7);
-      border-radius: 1.5rem;
-      margin-left: 10px;
+    }
+
+    .calc-btn {
+      width: 100%;
+      padding: 0 10px;
+      background: rgba(255, 213, 0, 0.7);
+      border-radius: 10px;
+      margin-top: 10px;
     }
 
     
@@ -126,52 +141,77 @@
       background: rgba(0, 255, 183, 0.7);
     }
 
+    .num-keys.zero{
+      width: auto;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+
     .res{
       text-align: center;
       padding-top: 10px;
       color: #00c92b;
       font-size: calc(2vw+2em);
     }
+
+    .calc-box{
+      border: 3px solid black;
+      padding: 15px 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px 0px black;
+      height: max-content;
+    }
+
+    .num-keys.backspace:hover{
+      filter: invert(1);
+      background: white;
+    }
+
+    #result,#result::-webkit-input-placeholder{
+      text-align: end;
+      color: #00c700;
+      background: #333
+    }
   </style>
 </head>
 
 <body>
   <div class="main">
-    <div class="header">
-      <h1>POLYNOMIAL SOLVER</h1>
-    </div>
-    <div class="content">
-      <div class="eq-container">
-        <label for="equation">Second degree equation : </label>
-        <div><input type="text" id="equation" readonly title="Click to clear">
-          <div class="btn-container">
-            <div class="helper-btn-div">
-              <button class="helper-btns" onclick="clicked('x*x')">&#119909<sup>2</sup></button>
-              <button class="helper-btns" onclick="clicked('x')">&#119909</button>
-              <button class="helper-btns" onclick="clicked('+')">+</button>
-              <button class="helper-btns" onclick="clicked('-')">-</button>
+        <div class="calc-box">
+          <h2>POLYNOMIAL SOLVER</h2>
+          <div style="display: flex;flex-direction:column;align-items:center">
+            <input type="text" id="equation" placeholder="Second degree equation" readonly title="Click to clear">
+            <input type="text" id="result" placeholder="Result" readonly>
+            <div class="btn-container">
+              <div class="helper-btn-div">
+                <button class="helper-btns" onclick="clicked('x*x')">&#119909<sup>2</sup></button>
+                <button class="helper-btns" onclick="clicked('x')">&#119909</button>
+                <button class="helper-btns" onclick="clicked('+')">+</button>
+                <button class="helper-btns" onclick="clicked('-')">-</button>
+              </div>
+              <div class="num-div">
+                <button class="num-keys" onclick="clicked('1')">1</button>
+                <button class="num-keys" onclick="clicked('2')">2</button>
+                <button class="num-keys" onclick="clicked('3')">3</button>
+                <button class="num-keys" onclick="clicked('4')">4</button>
+                <button class="num-keys" onclick="clicked('5')">5</button>
+                <button class="num-keys" onclick="clicked('6')">6</button>
+                <button class="num-keys" onclick="clicked('7')">7</button>
+                <button class="num-keys" onclick="clicked('8')">8</button>
+                <button class="num-keys" onclick="clicked('9')">9</button>
+                <button class="num-keys zero" onclick="clicked('0')">0</button>
+          
+                <button class="num-keys backspace" onclick="bkspc()"><img src="./assets/backspace.svg" width="30"/></button>
+                <button class="num-keys clr-btn" onclick="clr()" on>C</button>
+              </div>
             </div>
-            <div class="num-div">
-              <button class="num-keys" onclick="clicked('1')">1</button>
-              <button class="num-keys" onclick="clicked('2')">2</button>
-              <button class="num-keys" onclick="clicked('3')">3</button>
-              <button class="num-keys" onclick="clicked('4')">4</button>
-              <button class="num-keys" onclick="clicked('5')">5</button>
-              <button class="num-keys" onclick="clicked('6')">6</button>
-              <button class="num-keys" onclick="clicked('7')">7</button>
-              <button class="num-keys" onclick="clicked('8')">8</button>
-              <button class="num-keys" onclick="clicked('9')">9</button>
-
-              <button class="num-keys clr-btn" onclick="clr()" on>C</button>
-            </div>
+            <button class="calc-btn" onclick="calc()">Calculate</button>
+          </div>
+          <div class="res-div">
+            <h1 class="res"></h1>
           </div>
         </div>
-        <button class="calc-btn" onclick="calc()">Calculate</button>
-      </div>
-      <div class="res-div">
-        <h1 class="res"></h1>
-      </div>
-    </div>
+      
   </div>
   <script src="script.js"></script>
 </body>
