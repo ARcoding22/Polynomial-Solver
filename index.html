@@ -16,6 +16,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Courier New', Courier, monospace;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -172,6 +173,34 @@
       color: #00c700;
       background: #333
     }
+
+    .rhs{
+      display:inline-flex;flex-direction:column;align-items: center;padding: 0 10px;
+    }
+
+    .sol{
+      display: flex;align-items: center;
+    }
+
+    .steps{
+      padding: 10px;
+      background: #333;
+      border-radius: 10px;
+      color: #00c700;
+      position: absolute;
+      top: 33%;
+      height: 47%;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+    .steps::-webkit-scrollbar{
+      display: none;
+    }
+    .hide{
+      display: none;
+    }
+
+    button { touch-action: manipulation; }
   </style>
 </head>
 
@@ -180,8 +209,8 @@
         <div class="calc-box">
           <h2>POLYNOMIAL SOLVER</h2>
           <div style="display: flex;flex-direction:column;align-items:center">
-            <input type="text" id="equation" placeholder="Second degree equation" readonly title="Click to clear">
-            <input type="text" id="result" placeholder="Result" readonly>
+            <input type="text" id="equation" placeholder="Second degree equation" readonly title="Click to clear" value="2x*x+5x-1375">
+            <input type="text" id="result" placeholder="Result" readonly onclick="showSteps()">
             <div class="btn-container">
               <div class="helper-btn-div">
                 <button class="helper-btns" onclick="clicked('x*x')">&#119909<sup>2</sup></button>
@@ -212,6 +241,7 @@
           </div>
         </div>
       
+        <div class="steps hide"></div>
   </div>
   <script src="script.js"></script>
 </body>
