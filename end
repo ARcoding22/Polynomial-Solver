@@ -1,0 +1,42 @@
+[33mcommit c8e7607cff59d6abc468b4f63948b274017b95db[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: athulraj-coding <athulrajmoosarippurakkal@gmail.com>
+Date:   Wed Nov 23 23:07:52 2022 +0530
+
+    All set
+
+[33mcommit 7cb6ea69d2de0ccd09e5bc05287b24de5284e157[m
+Author: athulraj-coding <athulrajmoosarippurakkal@gmail.com>
+Date:   Wed Nov 23 23:01:34 2022 +0530
+
+    Steps feature added
+
+[33mcommit b123fc4036207a836991c9d3a96ac34b84743c88[m
+Merge: 33afe69 f102968
+Author: athulraj-coding <athulrajmoosarippurakkal@gmail.com>
+Date:   Mon Nov 21 22:25:22 2022 +0530
+
+    Merge branch 'master' of https://github.com/ARcoding22/Polynomial-Solver
+
+[33mcommit 33afe695167a0f2e6c90d3ba530d27ffa7e5fcf1[m
+Author: Athulraj M P <athulrajmoosraippurakkal@gmail.com>
+Date:   Mon Nov 21 19:31:06 2022 +0530
+
+    All js code set for finding polynomial
+
+[33mcommit f10296835bdd57ca48ac6e40ce6787b6b4a42941[m
+Author: ARcoding22 <118559154+ARcoding22@users.noreply.github.com>
+Date:   Sun Nov 20 23:17:01 2022 +0530
+
+    Create README.md
+
+[33mcommit c01643f198a23d4bdfc8e2e055cba9889e9505db[m
+Author: Athulraj M P <athulrajmoosraippurakkal@gmail.com>
+Date:   Sun Nov 20 22:49:49 2022 +0530
+
+    Designing completed
+
+[33mcommit f5b2026abe4ef22622e17b092be4d2ca9b8c1892[m
+Author: Athulraj M P <athulrajmoosraippurakkal@gmail.com>
+Date:   Sat Nov 19 11:38:08 2022 +0530
+
+    Initial commit
